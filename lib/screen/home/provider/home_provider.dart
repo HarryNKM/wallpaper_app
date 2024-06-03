@@ -8,6 +8,7 @@ class WallpaperProvider with ChangeNotifier {
   ApiHelper helper = ApiHelper();
   Future<WallpaperModal?>? modal;
   String search="nature";
+  int? index;
 
   void searchData(String s)
   {
@@ -17,6 +18,12 @@ class WallpaperProvider with ChangeNotifier {
 
   void getWallpaper() {
     modal = helper.getApi(q: search);
+    notifyListeners();
+  }
+
+  void addIndex(int i)
+  {
+    index=i;
     notifyListeners();
   }
 }

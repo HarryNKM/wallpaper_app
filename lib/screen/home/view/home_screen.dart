@@ -133,8 +133,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           padding: const EdgeInsets.all(12.0),
                           child: InkWell(
                               onTap: () {
+                                providerR!.addIndex(index);
                                 Navigator.pushNamed(context, 'wallpaper',
-                                    arguments: modal.hits![index]);
+                                    arguments: modal);
                               },
                               child: Image.network(
                                 "${modal.hits![index].previewURL}",
