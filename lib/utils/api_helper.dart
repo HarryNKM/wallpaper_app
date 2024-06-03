@@ -4,9 +4,10 @@ import 'package:http/http.dart' as http;
 import 'package:wallpaper_app/screen/home/modal/home_modal.dart';
 class ApiHelper
 {
-  Future<WallpaperModal?> getApi()
+  Future<WallpaperModal?> getApi({required String q})
   async {
-    String? wallpaperLink="https://pixabay.com/api/?key=44142058-366a967efa1c822fa73dbb354&q=spiderman&orientation=vertical";
+
+    String? wallpaperLink="https://pixabay.com/api/?key=44142058-366a967efa1c822fa73dbb354&q=$q&orientation=vertical";
     var response=await http.get(Uri.parse(wallpaperLink));
 
     if(response.statusCode==200)
